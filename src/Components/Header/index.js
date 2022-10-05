@@ -12,7 +12,7 @@ export default function Header(props) {
             <nav className="nav-bar">
                 <ul className='nav-items'>
                     <Link to='/'>
-                        <li className='item'>Back</li>
+                        <li className={active === 'welcome' ? 'item-active' : 'item'}>Welcome</li>
                     </Link>
                     <Link to='/home'>
                         <li className={active === 'home' ? 'item-active' : 'item'}>Home</li>

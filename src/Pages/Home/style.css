@@ -1,6 +1,12 @@
 .table-container {
-    display:flex;
-    position: absolute;
+    border-collapse: collapse;
+    width: 100%;
+    align-items: center;
+
+}
+
+.table {
+    margin: 0.4rem;
 }
 
 .table-fields-name {
@@ -17,4 +23,28 @@ td {
 
 tr:hover {
     background-color: #abdc17;
+}
+
+.btn-action {
+    border-radius: 0.35rem;
+    padding: 0.4rem;
+    margin: 0.4rem;
+    cursor: pointer;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

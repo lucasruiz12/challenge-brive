@@ -7,7 +7,7 @@ import About from './Components/About';
 
 function App() {
   return (
-    <div className='container' name='app'>
+    // <div className='container' name='app'>
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Landing />} />
@@ -15,7 +15,7 @@ function App() {
           <Route exact path='/about' element={<About />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    // </div>
   );
 }
 

@@ -1,0 +1,18 @@
+.landing-container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #54606c;
+}
+
+.landing-btn{
+    border: none;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+.landing-btn:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
