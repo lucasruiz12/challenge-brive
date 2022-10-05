@@ -1,31 +1,6 @@
-// import React from 'react'
-// import { Modal, ModalBody, ModalFooter, ModalHeader } from 'react-bootstrap'
-
-// export default function ModalActions(props) {
-
-//     const { type, data, show } = props
-
-//     console.log(show)
-
-//     return (
-//         <>
-//             {show ?
-//                 <Modal show={show}>
-//                     <ModalHeader>HOLA</ModalHeader>
-//                     <ModalBody>BODY</ModalBody>
-//                     <ModalFooter>FOOTER</ModalFooter>
-//                 </Modal>
-//                 :
-
-//                 <h2>MODAL para {type} a {data.user_name}</h2>
-//             }
-//         </>
-//     )
-// }
-
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import UserCard from '../UserCard';
+import React from 'react';
+import UserDetail from './UserDetail';
+import './style.css';
 
 export default function ModalActions(props) {
 
@@ -38,7 +13,20 @@ export default function ModalActions(props) {
     return (
         <>
             {show ?
-                <UserCard />
+                type === "Create" ?
+                    <>
+                    </>
+                    :
+                    type === "Read" ?
+                        <UserDetail setShow={setShow} data={data} toLoad={true} />
+                        :
+                        type === "Update" ?
+                            <></>
+                            :
+                            type === "Delete" ?
+                                <></>
+                                :
+                                null
                 :
                 null
             }

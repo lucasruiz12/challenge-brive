@@ -9,6 +9,9 @@ function TableUsers(props) {
   const [showModal, setShowModal] = useState(false)
   const [currentUser, setCurrentUser] = useState("")
   const [show, setShow] = useState(false)
+  const [users, setUsers] = useState(fakeUsers)
+
+  let auxArray = []
 
   setTimeout(() => {
     setLoading(false)
@@ -19,6 +22,13 @@ function TableUsers(props) {
       case "Agregar":
         setShowModal("Create")
         setShow(true)
+        auxArray = users
+        auxArray.push({
+          user_name: "Mateo",
+          user_email: "mateo@mail.com",
+          user_phone: "3852519"
+        })
+        setUsers(auxArray)
         break;
       case "Ver":
         setShowModal("Read")
@@ -40,7 +50,10 @@ function TableUsers(props) {
     }
   }
 
-  console.log(show)
+  const handleRefresh = () => {
+    console.log("Refresh")
+    setLoading(true)
+  }
 
   return (
     <div className='table-container'>
@@ -49,7 +62,10 @@ function TableUsers(props) {
         <Loading />
         :
         <>
-          <button className='btn-action' onClick={() => handleClick("Agregar")}>AGREGAR</button>
+          <div>
+            <button className='btn-action' onClick={() => handleClick("Agregar")}>AGREGAR</button>
+            <button className='btn-action' onClick={handleRefresh}>ACTUALIZAR</button>
+          </div>
           <table className='table'>
             <thead>
               <tr className='table-fields-name'>
