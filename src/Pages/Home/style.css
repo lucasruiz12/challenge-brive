@@ -1,0 +1,20 @@
+.table-container {
+    display:flex;
+    position: absolute;
+}
+
+.table-fields-name {
+    background-color: #54606c !important;
+    color: white;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #abdc17;
+}

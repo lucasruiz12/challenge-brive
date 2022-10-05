@@ -1,0 +1,17 @@
+[
+    {
+        "user_name": "Juan",
+        "user_email": "juan@mail.com",
+        "user_phone": "+5255641237"
+    },
+    {
+        "user_name": "Pedro",
+        "user_email": "pedro@mail.com",
+        "user_phone": "+5255112984"
+    },
+    {
+        "user_name": "Marcos",
+        "user_email": "marcos@mail.com",
+        "user_phone": "+5255613741"
+    }
+]
