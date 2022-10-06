@@ -2,7 +2,7 @@
     border-collapse: collapse;
     width: 100%;
     align-items: center;
-
+    display: grid;
 }
 
 .table {
@@ -23,6 +23,11 @@ td {
 
 tr:hover {
     background-color: #abdc17;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: space-around;
 }
 
 .btn-action {

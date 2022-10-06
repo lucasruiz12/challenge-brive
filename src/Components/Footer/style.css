@@ -6,7 +6,12 @@
     background-color: #54606c;
     color: white;
     text-align: center;
- }
+    padding: 0.5rem;
+}
+
+.text{
+    padding: 0.7rem;
+}
 
 .signature {
     color: white;

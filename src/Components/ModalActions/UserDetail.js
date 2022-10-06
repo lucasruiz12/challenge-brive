@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 
-function UserDetail(props) {
+export default function UserDetail(props) {
 
   const { setShow, data } = props
-  const [loading, setLoading] = useState(true)
+  // const [loading, setLoading] = useState(true)
 
   const hideCard = () => {
     setShow(false)
@@ -32,5 +32,3 @@ function UserDetail(props) {
     </>
   );
 }
-
-export default UserDetail;

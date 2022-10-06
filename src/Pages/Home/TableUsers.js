@@ -22,13 +22,13 @@ function TableUsers(props) {
       case "Agregar":
         setShowModal("Create")
         setShow(true)
-        auxArray = users
-        auxArray.push({
-          user_name: "Mateo",
-          user_email: "mateo@mail.com",
-          user_phone: "3852519"
-        })
-        setUsers(auxArray)
+        // auxArray = users
+        // auxArray.push({
+        //   user_name: "Mateo",
+        //   user_email: "mateo@mail.com",
+        //   user_phone: "3852519"
+        // })
+        // setUsers(auxArray)
         break;
       case "Ver":
         setShowModal("Read")
@@ -53,6 +53,7 @@ function TableUsers(props) {
   const handleRefresh = () => {
     console.log("Refresh")
     setLoading(true)
+    setShow(false)
   }
 
   return (
@@ -62,10 +63,17 @@ function TableUsers(props) {
         <Loading />
         :
         <>
+        <div>
+          <h2>Lista de clientes</h2>
+          <hr style={{fontSize:"8px"}} />
           <div>
+            <br />
             <button className='btn-action' onClick={() => handleClick("Agregar")}>AGREGAR</button>
             <button className='btn-action' onClick={handleRefresh}>ACTUALIZAR</button>
+            <br />
+            <br />
           </div>
+        </div>
           <table className='table'>
             <thead>
               <tr className='table-fields-name'>
@@ -83,7 +91,7 @@ function TableUsers(props) {
                     <td>{el.user_phone}</td>
                     <td>{el.user_email}</td>
                     <td>
-                      <div>
+                      <div className='btn-group'>
                         <button className='btn-action' onClick={() => handleClick("Ver", el)}>Ver</button>
                         <button className='btn-action' onClick={() => handleClick("Editar", el)}>Editar</button>
                         <button className='btn-action' onClick={() => handleClick("Eliminar", el)}>Eliminar</button>
@@ -97,7 +105,7 @@ function TableUsers(props) {
           </table>
           {
             showModal ?
-              <ModalActions type={showModal} data={currentUser} show={show} setShow={setShow} />
+              <ModalActions type={showModal} data={currentUser} show={show} setShow={setShow} users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser} />
               :
               null
           }
