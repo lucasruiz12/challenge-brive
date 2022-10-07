@@ -3,7 +3,6 @@ import UserDetail from './UserDetail';
 import './style.css';
 import UserCreate from './UserCreate';
 import UserUpdate from './UserUpdate';
-import UserDelete from './UserDelete';
 
 export default function ModalActions(props) {
 
@@ -24,9 +23,6 @@ export default function ModalActions(props) {
                         :
                         type === "Update" ?
                             <UserUpdate users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser}  />
-                            :
-                            type === "Delete" ?
-                                <UserDelete currentUser={currentUser} users={users} setUsers={setUsers} />
                                 :
                                 null
                 :

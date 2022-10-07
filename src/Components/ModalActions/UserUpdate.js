@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
 
 export default function UserUpdate(props) {
 
@@ -25,6 +26,7 @@ export default function UserUpdate(props) {
         }
         // setUsers([...users, userToAdd])
         console.log([...users, userToAdd])
+        swal("Actualizado!", `Actualizaste al usuario ${currentUser.user_email} con éxito`, "success");
     }
 
     return (
@@ -62,7 +64,7 @@ export default function UserUpdate(props) {
                         />
                     </li>
                 </ul>
-                <button type="submit">AGREGAR</button>
+                <button type="submit">GUARDAR CAMBIOS</button>
             </form>
         </>
     )
