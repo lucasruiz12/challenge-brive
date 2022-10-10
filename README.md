@@ -26,7 +26,7 @@ Para poder ver el proyecto se debe descargar el repositorio, instalar las depend
 - Se utilizaron arrays para almacenar la información de una manera ordenada y precisa. 
 
 
-## Authors
+## Autor
 
 Hecho con ♥
 - [Lucas Ruiz](https://www.github.com/lucasruiz12)
