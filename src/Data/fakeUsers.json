@@ -2,16 +2,25 @@
     {
         "user_name": "Juan",
         "user_email": "juan@mail.com",
-        "user_phone": "+5255641237"
+        "user_phone": "+5255641237",
+        "user_image": "https://www.edipro.app/wp-content/uploads/2019/05/admin-300x300.png"
+    },
+    {
+        "user_name": "Rosario",
+        "user_email": "rosario@mail.com",
+        "user_phone": "+5255613741",
+        "user_image": "https://clubdeescritura.com/wp-content/uploads/users-131/user-130358/2020/09/c7d1cdffff99983cf006d81639b25ca0-mujer-de-pelo-largo-y-ondulado-avatar-by-vexels-b5d6332b449fb8000c326cd042410466-300x300.png"
+    },
+    {
+        "user_name": "Milagro",
+        "user_email": "milagro@mail.com",
+        "user_phone": "+5255112984",
+        "user_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYI6rYfwZo3o1c5SC_3M3tRwJ84bJDDqxIvQ&usqp=CAU"
     },
     {
         "user_name": "Pedro",
         "user_email": "pedro@mail.com",
-        "user_phone": "+5255112984"
-    },
-    {
-        "user_name": "Marcos",
-        "user_email": "marcos@mail.com",
-        "user_phone": "+5255613741"
+        "user_phone": "+5255113321",
+        "user_image": "https://w7.pngwing.com/pngs/753/478/png-transparent-businessman-male-business-avatar-formal-man-office-person-business-person-portrait-thumbnail.png"
     }
 ]

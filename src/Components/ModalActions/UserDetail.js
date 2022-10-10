@@ -28,7 +28,7 @@ export default function UserDetail(props) {
           :
           <div className='card'>
             <div className='card-info'>
-              <img className='card-img' src='https://s36496.pcdn.co/wp-content/uploads/2017/11/9-si-foto-cv.png' alt="noimg" />
+              <img className='card-img' src={data.user_image} alt="noimg" />
               <div>
                 <p>
                   Nombre: {data.user_name}

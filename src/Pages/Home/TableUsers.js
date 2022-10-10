@@ -9,16 +9,16 @@ function TableUsers(props) {
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
   const [currentUser, setCurrentUser] = useState("")
+  const [currentIndex, setCurrentIndex] = useState("")
   const [show, setShow] = useState(false)
   const [users, setUsers] = useState(fakeUsers)
-
-  let auxArray = []
 
   setTimeout(() => {
     setLoading(false)
   }, 2000);
 
   const deleteFunction = (data) => {
+    setShow(false)
     swal({
       title: "Estás seguro?",
       text: `Vas a eliminar al cliente ${data.user_email}`,
@@ -29,16 +29,18 @@ function TableUsers(props) {
       .then((willDelete) => {
         if (willDelete) {
           let newList = users.filter((el) => el.user_email !== data.user_email)
-          setUsers(newList)
-          console.log(users)
-          swal("Eliminado!", `Eliminaste al usuario ${data.user_email} con éxito`, "success");
+          swal("Eliminado!", `Eliminaste al usuario ${data.user_email} con éxito`, "success")
+            .then((response) => {
+              handleRefresh();
+              setUsers(newList)
+            });
         } else {
           swal("Tu cliente no fue eliminado...");
         }
       });
   }
 
-  const handleClick = (type, data) => {
+  const handleClick = (type, data, idx) => {
     switch (type) {
       case "Agregar":
         setShowModal("Create")
@@ -52,6 +54,7 @@ function TableUsers(props) {
       case "Editar":
         setShowModal("Update")
         setCurrentUser(data)
+        setCurrentIndex(idx)
         setShow(true)
         break;
       case "Eliminar":
@@ -63,10 +66,14 @@ function TableUsers(props) {
   }
 
   const handleRefresh = () => {
-    console.log("Refresh")
-    setLoading(true)
+    setLoading(true);
     setShow(false)
   }
+
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setShow(false);
+  // }, [users])
 
   return (
     <div className='table-container'>
@@ -76,12 +83,12 @@ function TableUsers(props) {
         :
         <>
           <div>
-            <h2>Lista de clientes</h2>
-            <hr style={{ fontSize: "8px" }} />
+            <h2 style={{margin: "1rem"}}>Lista de clientes</h2>
+            <hr />
             <div>
               <br />
               <button className='btn-action' onClick={() => handleClick("Agregar")}>AGREGAR</button>
-              <button className='btn-action' onClick={handleRefresh}>ACTUALIZAR</button>
+              {/* <button className='btn-action' onClick={handleRefresh}>ACTUALIZAR</button> */}
               <br />
               <br />
             </div>
@@ -105,7 +112,7 @@ function TableUsers(props) {
                     <td>
                       <div className='btn-group'>
                         <button className='btn-action' onClick={() => handleClick("Ver", el)}>Ver</button>
-                        <button className='btn-action' onClick={() => handleClick("Editar", el)}>Editar</button>
+                        <button className='btn-action' onClick={() => handleClick("Editar", el, idx)}>Editar</button>
                         <button className='btn-action' onClick={() => handleClick("Eliminar", el)}>Eliminar</button>
                       </div>
                     </td>
@@ -117,7 +124,7 @@ function TableUsers(props) {
           </table>
           {
             showModal ?
-              <ModalActions type={showModal} data={currentUser} show={show} setShow={setShow} users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser} />
+              <ModalActions type={showModal} data={currentUser} show={show} setShow={setShow} users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser} currentIndex={currentIndex} handleRefresh={handleRefresh} />
               :
               null
           }

@@ -1,4 +1,4 @@
-.card{
+.card {
   border: solid #abdc17 2px;
   border-radius: 2rem;
   width: 25rem;
@@ -8,14 +8,33 @@
   padding: 1.2rem;
 }
 
-.card-info{
+.card-info {
   display: flex;
   flex-direction: row;
 }
 
-.card-img{
+.card-img {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
   margin-right: 3rem;
+}
+
+.form {
+  display: flex;
+  border: solid #abdc17 2px;
+  border-radius: 2rem;
+  width: 25rem;
+  margin: 0.8rem;
+}
+
+.form-card {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.items-form {
+  list-style: none;
+  margin: 0.8rem;
 }

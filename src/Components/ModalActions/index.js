@@ -1,28 +1,24 @@
 import React from 'react';
 import UserDetail from './UserDetail';
-import './style.css';
 import UserCreate from './UserCreate';
 import UserUpdate from './UserUpdate';
+import './style.css';
 
 export default function ModalActions(props) {
 
-    const { type, data, show, setShow, users, setUsers, currentUser, setCurrentUser } = props
-
-    // const closeButton = () => {
-    //     setShow(false)
-    // }
+    const { type, data, show, setShow, users, setUsers, currentUser, setCurrentUser, currentIndex, handleRefresh } = props
 
     return (
         <>
             {show ?
                 type === "Create" ?
-                    <UserCreate users={users} setUsers={setUsers} />
+                    <UserCreate users={users} setUsers={setUsers} handleRefresh={handleRefresh} />
                     :
                     type === "Read" ?
-                        <UserDetail setShow={setShow} data={data} toLoad={true} />
+                        <UserDetail setShow={setShow} data={data} />
                         :
                         type === "Update" ?
-                            <UserUpdate users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser}  />
+                            <UserUpdate users={users} setUsers={setUsers} currentUser={currentUser} setCurrentUser={setCurrentUser} currentIndex={currentIndex} handleRefresh={handleRefresh}  />
                                 :
                                 null
                 :
